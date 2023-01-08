@@ -110,115 +110,14 @@
       <div class="row my-2">
         <div class="col-sm-12">
           <div class="card h5">
-            <div class="card-header" style="animation: rainbow 20s infinite"><b>Hue shift</b></div>
-            <div class="card-body" style="font-size: 0.8rem">
-              <form method="POST">
-                <div for="color"><b>Hue</b></div>
-                <small>Ranges from -180° to 180°</small>
-                <div class="row mb-2">
-                  <div class="col-9">
-                    <input type="range" class="custom-range" min="-180" max="180" step="1" value="0" id="hue_angle" name="hue_angle" onchange="updateTextInput('hue_value', this.value); updateColorValues('domin_colors', this.value);">
-                  </div>
-                  <div class="col-3 text-center">
-                    <span id="hue_value" style="color: slateblue">0</span>
-                  </div>
-                </div>
-
-                {% if filename %}
-                <div class="row" id="domin_colors">
-                  <div class="col-4 ml-3 p-2 rounded" style="background-color: rgb{{ colors[0][1] }}">
-                  </div>
-                  <div class="col-2 mx-auto p-2 rounded" style="background-color: rgb{{ colors[1][1] }}">
-                  </div>
-                  <div class="col-2 mx-auto p-2 rounded" style="background-color: rgb{{ colors[2][1] }}">
-                  </div>
-                  <div class="col-1 mx-auto p-2 rounded" style="background-color: rgb{{ colors[3][1] }}">
-                  </div>
-                  <div class="col-1 mr-3 p-2 rounded" style="background-color: rgb{{ colors[4][1] }}">
-                  </div>
-                </div>
-                {% else %}
-                <div>No image uploaded yet !</div>
-                {% endif %}
-
-                <button type="submit" name="hue_button" value="hue" class="btn btn-block btn-dark mt-2"><b>Apply</b></button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="row my-2">
-        <div class="col-sm-12">
-          <div class="card h5">
-            <div class="card-header"><b>Apply filters</b></div>
-            <a href="#demo1" class="btn btn-dark" data-toggle="collapse" style="margin: 1.25rem"><b>Open / Close</b></a>
-            <div class="card-body collapse" id="demo1">
-
-              <div class="row">
-                <div class="col-sm-5 mx-auto my-2 p-2 text-center stripes rounded">
-                  <div class="h5">Blur</div>
-                  <form method="POST">
-                    <button type="submit" name="blur_button" value="0" class="btn btn-primary">Blur</button>
-                    <button type="submit" name="blur_button" value="1" class="btn btn-primary">BoxBlur(1)</button>
-                    <button type="submit" name="blur_button" value="2" class="btn btn-primary">GaussianBlur</button>
-                  </form>
-                </div>
-
-                <div class="col-sm-5 mx-auto my-2 p-2 text-center stripes rounded">
-                  <div class="h5">Sharpen</div>
-                  <form method="POST">
-                    <button type="submit" name="sharpen_button" value="0" class="btn btn-primary">Sharpen</button>
-                    <button type="submit" name="sharpen_button" value="1" class="btn btn-primary">Detail</button>
-                    <button type="submit" name="sharpen_button" value="2" class="btn btn-primary">UnsharpMask</button>
-                  </form>
-                </div>
-
-                <div class="col-sm-5 mx-auto my-2 p-2 text-center stripes rounded">
-                  <div class="h5">Edge Enhance</div>
-                  <form method="POST">
-                    <div class="my-1">
-                      <button type="submit" name="edge_button" value="0" class="btn btn-primary">EdgeEnhance</button>
-                      <button type="submit" name="edge_button" value="1" class="btn btn-primary">EdgeEnhMore</button>
-                    </div>
-                    <div>
-                      <button type="submit" name="edge_button" value="2" class="btn btn-primary">Emboss</button>
-                      <button type="submit" name="edge_button" value="3" class="btn btn-primary">FindEdges</button>
-                      <button type="submit" name="edge_button" value="4" class="btn btn-primary">Contour</button>
-                    </div>
-                  </form>
-                </div>
-
-                <div class="col-sm-5 mx-auto my-2 p-2 text-center stripes rounded">
-                  <div class="h5">Smooth</div>
-                  <form method="POST">
-                    <button type="submit" name="smooth_button" value="0" class="btn btn-primary">Smooth</button>
-                    <button type="submit" name="smooth_button" value="1" class="btn btn-primary">SmoothMore</button>
-                  </form>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row my-2">
-        <div class="col-sm-12">
-          <div class="card h5">
             <div class="card-header"><b>Rotate / Resize / Crop</b></div>
-            <a href="#demo2" class="btn btn-dark" data-toggle="collapse" style="margin: 1.25rem"><b>Open / Close</b></a>
-            <div class="card-body collapse mx-auto" id="demo2">
-
               {% if filename %}
                 <small class="text-success"><b>Your image size is:<br>({{ width }}, {{ height}})</b></small>
               {% else %}
                 <div>No image uploaded yet !</div>
               {% endif %}
-
               <div class="row">
-                <div class="col-sm-12 mx-auto my-2 p-2 text-center stripes rounded">
+                <div class="col-sm-12">
                   <form method="POST">
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
@@ -226,12 +125,10 @@
                       </div>
                       <input type="text" class="form-control" name="angle" placeholder="angle">
                     </div>
-
                     <button type="submit" name="rotate_button" value="rotate" class="btn btn-primary btn-block"><b>Rotate</b></button>
                   </form>
                 </div>
-
-                <div class="col-sm-12 mx-auto my-2 p-2 text-center stripes rounded">
+                <div class="col-sm-12">
                   <form method="POST">
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
@@ -239,19 +136,16 @@
                       </div>
                       <input type="text" class="form-control" name="width" placeholder="width">
                     </div>
-
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Height</span>
                       </div>
                       <input type="text" class="form-control" name="height" placeholder="height">
                     </div>
-
                     <button type="submit" name="resize_button" value="resize" class="btn btn-primary btn-block"><b>Resize</b></button>
                   </form>
                 </div>
-
-                <div class="col-sm-12 mx-auto my-2 p-2 text-center stripes rounded">
+                <div class="col-sm-12">
                   {% if filename %}
                     <img src="{{url_for('static', filename=filename)}}" class="rounded" style="max-width: 100%" id="cropper"/>
                     <div class="my-2"></div>
@@ -266,7 +160,6 @@
                       <input type="text" name="start_x" class="form-control" placeholder="x" id="start_x" readonly>
                       <input type="text" name="start_y" class="form-control" placeholder="y" id="start_y" readonly>
                     </div>
-
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="">End coords.</span>
@@ -274,19 +167,14 @@
                       <input type="text" name="end_x" class="form-control" placeholder="x + w" id="end_x" readonly>
                       <input type="text" name="end_y" class="form-control" placeholder="y + h" id="end_y" readonly>
                     </div>
-
                     <button type="submit" name="crop_button" value="crop" class="btn btn-primary btn-block"><b>Crop</b></button>
                   </form>
                 </div>
               </div>
-            </div>
-
           </div>
         </div>
       </div>
-
     </div>
-
     <div class="container" style="height: 2%"></div>
 
     <!-- Optional JavaScript -->
@@ -296,16 +184,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js"></script>
-    <script>
-      function updateTextInput(id, val) {
-          element = document.getElementById(id);
-          element.innerHTML = val;
-        }
-      updateTextInput('color_value', {{ slider['color'] }});
-      updateTextInput('brightness_value', {{ slider['bright'] }});
-      updateTextInput('contrast_value', {{ slider['contrast'] }});
-      updateTextInput('sharpness_value', {{ slider['sharp'] }});
-    </script>
     <script>
       function updateColorValues(id, val) {
           parent = document.getElementById(id);
