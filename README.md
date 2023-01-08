@@ -13,6 +13,8 @@ Uses the well known Python library Pillow for the image processing
 
 **Application**
 1. cd /app
+python3 -m venv pe_venv
+source venv/bin/activate
 2. pip3 install -r requirements.txt
 3. python3 main.py
 

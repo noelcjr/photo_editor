@@ -26,20 +26,6 @@ def get_image_size(image):
     return image.width, image.height
 
 
-# ENHANCERS
-def apply_enhancers(image, image_path, slider):
-    colorer = ImageEnhance.Color(image)
-    image = colorer.enhance(slider['color'])
-    brighter = ImageEnhance.Brightness(image)
-    image = brighter.enhance(slider['bright'])
-    contraster = ImageEnhance.Contrast(image)
-    image = contraster.enhance(slider['contrast'])
-    sharper = ImageEnhance.Sharpness(image)
-    image = sharper.enhance(slider['sharp'])
-
-    image.save(image_path)
-
-
 # HUE [ inspired by: https://stackoverflow.com/questions/24874765 ]
 def get_dominant_colors(image_path, colors_count=5):
     image = load_image(image_path)

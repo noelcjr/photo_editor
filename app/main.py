@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
-from pillow import load_image, dupe_image, get_default_slider, apply_enhancers, apply_hue_shift, get_dominant_colors
+from pillow import load_image, dupe_image, get_default_slider, apply_hue_shift, get_dominant_colors
 from pillow import apply_blur, apply_sharpen, apply_edge_enhance, apply_smooth
 from pillow import get_image_size, rotate_image, resize_image, crop_image
 from cleanup import remove_static_files
@@ -67,7 +67,7 @@ def home():
                 return redirect(url_for('uploaded'))
 
     return render_template('home.html')
-
+Flask==2.2
 
 @app.route('/uploaded', methods=['GET', 'POST'])
 def uploaded():
@@ -97,9 +97,6 @@ def uploaded():
             if download_button:
                 return send_file(os.path.join(UPLOAD_FOLDER, INPUT_FILENAME), as_attachment=True)
 
-            if enhance_button:
-                slider = {key: float(request.form.get(key)) for key, value in slider.items()}
-                apply_enhancers(image, os.path.join(UPLOAD_FOLDER, INPUT_FILENAME), slider)
             if hue_button:
                 hue_angle = float(request.form.get('hue_angle'))
                 apply_hue_shift(os.path.join(UPLOAD_FOLDER, INPUT_FILENAME), hue_angle)

@@ -110,69 +110,6 @@
       <div class="row my-2">
         <div class="col-sm-12">
           <div class="card h5">
-            <div class="card-header"><b>Simple enhance</b></div>
-            <div class="card-body" style="font-size: 0.8rem">
-              <form method="POST">
-                <div for="color"><b>Color</b></div>
-                <small>0 for black/white, 3 for oversaturated</small>
-                <div class="row">
-                  <div class="col-9">
-                    <input type="range" class="custom-range" min="0" max="3" step="0.1" value={{ slider['color'] }} id="color" name="color" onchange="updateTextInput('color_value', this.value);">
-                  </div>
-                  <div class="col-3 text-center">
-                    <span id="color_value" style="color: slateblue">1</span>
-                  </div>
-                </div>
-
-                <hr class="my-1">
-
-                <div for="brightness"><b>Brightness</b></div>
-                <small>0 for complete black</small>
-                <div class="row">
-                  <div class="col-9">
-                    <input type="range" class="custom-range" min="0" max="3" step="0.1" value={{ slider['bright'] }} id="brightness" name="bright" onchange="updateTextInput('brightness_value', this.value);">
-                  </div>
-                  <div class="col-3 text-center">
-                    <span id="brightness_value" style="color: slateblue">1</span>
-                  </div>
-                </div>
-
-                <hr class="my-1">
-
-                <div for="brightness"><b>Contrast</b></div>
-                <small>0 for solid grey image</small>
-                <div class="row">
-                  <div class="col-9">
-                    <input type="range" class="custom-range" min="0" max="3" step="0.1" value={{ slider['contrast'] }} id="contrast" name="contrast" onchange="updateTextInput('contrast_value', this.value);">
-                  </div>
-                  <div class="col-3 text-center">
-                    <span id="contrast_value" style="color: slateblue">1</span>
-                  </div>
-                </div>
-
-                <hr class="my-1">
-
-                <div for="brightness"><b>Sharpness</b></div>
-                <div class="row">
-                  <div class="col-9">
-                    <input type="range" class="custom-range" min="0" max="3" step="0.1" value={{ slider['sharp'] }} id="sharpness" name="sharp" onchange="updateTextInput('sharpness_value', this.value);">
-                  </div>
-                  <div class="col-3 text-center">
-                    <span id="sharpness_value" style="color: slateblue">1</span>
-                  </div>
-                </div>
-
-                <button type="submit" name="enhance_button" value="enhance" class="btn btn-block btn-dark mt-2"><b>Apply</b></button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="row my-2">
-        <div class="col-sm-12">
-          <div class="card h5">
             <div class="card-header" style="animation: rainbow 20s infinite"><b>Hue shift</b></div>
             <div class="card-body" style="font-size: 0.8rem">
               <form method="POST">
